@@ -90,7 +90,7 @@
 
 ## 作者
 
-**大队长 · 付强** · 南方基金 数智科技部 · USTC alumnus
+**大队长** · USTC alumnus
 联系: <fqsx@mail.ustc.edu.cn>
 
 ---
