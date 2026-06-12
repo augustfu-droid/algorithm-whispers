@@ -1,0 +1,227 @@
+% ===== 中文支持（Fandol） =====
+\usepackage[fontset=fandol]{ctex}
+
+% ===== 西文字体 =====
+\setmainfont{DejaVu Serif}[Scale=0.92]
+\setsansfont{DejaVu Sans}[Scale=0.92]
+\setmonofont{DejaVu Sans Mono}[Scale=0.88]
+
+% ===== 数学：用 amsmath 而非 unicode-math，避免 xetex bad font flag =====
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{bm}
+
+% ===== 图像 =====
+\usepackage{graphicx}
+\usepackage{float}
+
+% ===== 颜色 =====
+\usepackage{xcolor}
+\definecolor{teal1}{HTML}{01696F}
+\definecolor{teal2}{HTML}{0C4E54}
+\definecolor{teal3}{HTML}{20808D}
+\definecolor{coverbg}{HTML}{0A1B2E}
+
+% ===== 页面布局 =====
+\usepackage[a4paper, margin=2.5cm, headheight=15pt, footskip=1.4cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape 算法的低语}
+\fancyhead[R]{\small\itshape 大模型背后的数学引擎}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\scriptsize\itshape\color{teal2}大队长出品}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ===== 段落与行距 =====
+\linespread{1.35}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+
+% ===== 标题样式 =====
+\usepackage{titlesec}
+\titleformat{\section}
+  {\Large\bfseries\color{teal1}}
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\large\bfseries\color{teal2}}
+  {\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}
+  {\thesubsubsection}{1em}{}
+
+% ===== 超链接 =====
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=teal2,
+  urlcolor=teal3,
+  citecolor=teal3,
+  pdftitle={算法的低语：大模型背后的数学引擎},
+  pdfauthor={大队长 (fqsx@mail.ustc.edu.cn)},
+  pdfsubject={LLM Mathematics Deep Dive},
+  bookmarksnumbered=true
+}
+
+% ===== 列表紧凑化 =====
+\usepackage{enumitem}
+\setlist{itemsep=0.2em, parsep=0.2em, topsep=0.3em}
+
+% ===== 代码块 =====
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+
+% ===== 公式与换行 =====
+\allowdisplaybreaks
+\setlength{\emergencystretch}{3em}
+
+% ===== 封面页与背景 =====
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usetikzlibrary{fadings}
+
+% ===== 全页斜置大水印（除封面外每页都打）=====
+% 用 textpos 包的绝对页面定位，配 eso-pic 的页脚 hook
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\fancypagestyle{watermark}{%
+  \fancyhf{}%
+  \fancyhead[L]{\small\itshape 算法的低语}%
+  \fancyhead[R]{\small\itshape 大模型背后的数学引擎}%
+  \fancyfoot[C]{\thepage}%
+  \fancyfoot[R]{\scriptsize\itshape\color{teal2}大队长出品}%
+  \fancyfoot[L]{%
+    \begin{textblock}{210}(0,0)%
+      \includegraphics[width=\paperwidth,height=\paperheight]{watermark.png}%
+    \end{textblock}%
+  }%
+  \renewcommand{\headrulewidth}{0.4pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+\AtBeginDocument{\pagestyle{watermark}}
+
+\newcommand{\makecoverpage}{%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    % 封面 thispagestyle{empty} 已结束 fancyhdr 水印
+    \AddToShipoutPictureBG*{%
+      \AtPageLowerLeft{%
+        \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio=false]{cover.png}%
+      }%
+      \AtPageLowerLeft{%
+        \begin{tikzpicture}[overlay]
+          % 使用 path fading 让顶底黑色遮罩向中间平滑渐退
+          \fill[black, opacity=0.50] (0,\paperheight-9cm) rectangle (\paperwidth, \paperheight);
+          \fill[black, opacity=0.30] (0,9cm) rectangle (\paperwidth, \paperheight-9cm);
+          \fill[black, opacity=0.75] (0,0) rectangle (\paperwidth, 9cm);
+          % 在过渡边界加入几条递减透明度的薄层，模拟渐变
+          \foreach \i in {1,2,3,4,5} {%
+            \fill[black, opacity=0.05] (0,\paperheight-9cm-\i*3mm) rectangle (\paperwidth, \paperheight-9cm+\i*3mm);
+            \fill[black, opacity=0.05] (0,9cm-\i*3mm) rectangle (\paperwidth, 9cm+\i*3mm);
+          }
+        \end{tikzpicture}%
+      }%
+    }
+    \begin{center}
+      \vspace*{3cm}
+      {\color{white}\fontsize{48pt}{56pt}\selectfont\bfseries 算法的低语\par}
+      \vspace{1cm}
+      {\color{white}\Large\itshape 从概率论到复杂系统\par}
+      \vspace{0.4cm}
+      {\color{white}\Large\itshape 大模型背后的数学引擎\par}
+      \vfill
+      {\color{teal3!40!white}\rule{8cm}{0.6pt}\par}
+      \vspace{0.8cm}
+      {\color{white}\fontsize{22pt}{28pt}\selectfont\bfseries 大队长\ 出品\par}
+      \vspace{0.6cm}
+      {\color{white!95}\large\itshape \href{mailto:fqsx@mail.ustc.edu.cn}{\color{white!95}fqsx@mail.ustc.edu.cn}\par}
+      \vspace{1cm}
+      {\color{teal3!40!white}\rule{8cm}{0.6pt}\par}
+      \vspace{0.8cm}
+      {\color{white!85}\small 完稿于 2026 年 6 月\quad·\quad 约 4.5 万字\quad·\quad 覆盖至 2026 Q2 前沿\par}
+      \vspace{0.4cm}
+      {\color{teal3!60!white}\small\bfseries Version 2.4.1 · 上下两半场\par}
+      \vspace{1.2cm}
+    \end{center}
+    % 右上角小角标水印（旋转 -90 度沿右侧书脊样式）
+    \AddToShipoutPictureFG*{%
+      \AtPageUpperLeft{%
+        \put(40,-50){\color{white!70}\scriptsize\itshape 大队长出品}%
+      }%
+      \AtPageUpperLeft{%
+        \put(\LenToUnit{\paperwidth-3.2cm},-30){\color{teal3!50!white}\scriptsize\bfseries v2.4.1}%
+      }%
+    }
+    \clearpage
+  \end{titlepage}
+}
+
+% ===== 版本历史页 =====
+\newcommand{\makechangelog}{%
+  \clearpage
+  \thispagestyle{plain}
+  \section*{\color{teal1}版本历史 \textnormal{\normalsize Changelog}}
+  \vspace{0.5em}
+  {\small\itshape\color{gray}记录每一版本的内容更新、章节扩充与视觉迭代。}
+  \vspace{1.5em}
+
+  \noindent\textbf{\color{teal1}v2.4.1\quad}{\small\color{gray}2026 年 6 月 12 日 \,·\, 第六章过渡引言重写}
+  \begin{itemize}\setlength\itemsep{0.25em}
+    \item 主本第六章过渡引言「当指数遇见指数」整段替换为大队长亲笔「从双对数直线跌进重工业齿轮 —— 欢迎来到大模型的下半场」：明确卷别分割，从 Attention $O(n^2)$ 复杂度墙一路推到 HBM、CoWoS、光模块、GW 集群与资本负债表，给上下半场一个干净的交班。
+    \item 行文修订：「冷酷獠牙」「极致压榨」字形校正；行内数学符号统一为 \texttt{\textbackslash(...\textbackslash)} 形态。封面与右上角标 v2.2 → v2.4.1。
+  \end{itemize}
+
+  \vspace{1em}
+  \noindent\textbf{\color{teal1}v2.4\quad}{\small\color{gray}2026 年 6 月 11 日 \,·\, 远端 v2.3 校订 + 本地题记/过渡引言并轨}
+  \begin{itemize}\setlength\itemsep{0.25em}
+    \item 与远端 0d566b2「v2.3 校订版」合并：保留远端 5 处行文软化（数学不撒谎 / 原罪 / 测量幻觉 / 从未理解 / 仅此而已）与勘误策略，叠加本地 9 段章节题记（含 Wigner、Hilbert、Boltzmann、Norvig 等真实引文）与第六章过渡引言。
+    \item 数学卷 v1.5 → v1.6：11 处题记 / 直觉段同步推开，覆盖全卷。
+  \end{itemize}
+
+  \vspace{1em}
+  \noindent\textbf{\color{teal1}v2.2\quad}{\small\color{gray}2026 年 6 月 10 日 \,·\, 教学级配图批量补入·3B1B 风格}
+  \begin{itemize}\setlength\itemsep{0.25em}
+    \item 主本新增 7 张重点章节示意图（图 1.1—7.1）：高维抽屉效应、king−man+woman≈queen、猎头匹配、Scaling Law log–log 三条腿、Grokking 双曲线与相变、钱/卡/电三层金字塔、Transformer 架构演化树。数学卷新增 8 张过程图（图 M2.1—M7.1）：Softmax 三步、Skip-gram 负采样、Attention 矩阵乘法三步、梯度下降损失面下山、Transformer Block 前向、RoPE 旋转编码、KV Cache 推理复用、MoE Top-2 专家路由。风格参照 3Blue1Brown，light mode，南方基金调色 \& 高饱和度强调色。
+    \item 改动记录重整：按「同一天合为一个版本」原则压缩，原 2026-06-08 的 v2.0/v2.0.1/v2.1 合并为 v2.1，原 2026-06-09 的 v2.1.2（数学卷本地化）保留为 v2.1.2，原 2026-06-07 的 v1.0/v1.1 合并为 v1.0。主本封面 v2.0 → v2.2；数学卷封面 v1.3 → v1.4。
+  \end{itemize}
+
+  \vspace{1em}
+  \noindent\textbf{\color{teal1}v2.1.2\quad}{\small\color{gray}2026 年 6 月 9 日 \,·\, 数学卷术语本地化·「中文（English）」样式统一}
+  \begin{itemize}\setlength\itemsep{0.25em}
+    \item 扫描全书 460+ 个英文术语候选，对「有公认中译」的核心术语·始于首次出现位置·统一为「中文（English）」格式：例如变换器（Transformer）、注意力（Attention）、尺度律（Scaling Law）、顿悟（Grokking）、智能体（Agent）、资本开支（Capex）、超大规模云厂商（Hyperscaler）、屋脊线（Roofline）、雅可比（Jacobian）、海森（Hessian）、嵌入（Embedding）、词元（Token）、归一化指数（Softmax）、N 选优（Best-of-N）等 49 处。
+    \item 已带中译的位置不重复插入；在文献条目、论文标题、代码块、数学公式、Markdown 链接与英文短语链中不做拆裂，遵守学术引用原貌。
+    \item 主本封面未变；数学卷封面 v1.2 → v1.3。
+  \end{itemize}
+
+  \vspace{1em}
+  \noindent\textbf{\color{teal1}v2.1\quad}{\small\color{gray}2026 年 6 月 8 日 \,·\, 主本重构为七章本·数学卷拆为独立附册·§7.8 世界模型补全}
+  {\small\color{gray}\itshape\quad 合并原 v2.0、v2.0.1、v2.1、v2.1.1——同一日全部变动}
+  \begin{itemize}\setlength\itemsep{0.25em}
+    \item 主本新增第六章《数学为何变成万亿美元——从 Attention 到 AI 资本周期》，约 1.2 万字，贯通二级产业链：算术强度墙 → GPU/CUDA 护城河 → HBM 三巨头 → CoWoS 封装瓶颈 → 800G/1.6T 光模块 → GW 级数据中心与电力墙 → Hyperscaler 万亿 capex 与折旧周期 → AI 泡沫的三种含义与领先指标；包含 4 张数据表与 39 个一手来源引用。
+    \item 主本新增第七章《后 Transformer 时代——SSM、线性注意力与下一代架构》，约 8000 字，覆盖：\(O(n^2)\) 下界证明 → SSM 从 ZOH 到 Mamba 选择性 → 线性注意力家族的统一视角 → 混合架构 → 长上下文与 KV cache 瓶颈 → 扩散语言模型 → 世界模型与 Agent 需求拉动 → 架构平台期与下一次相变。尾声重写，五条核心洞见扩为七条。
+    \item 数学卷拆分发行：原合刊「附录卷」从主本抽出，独立为《算法的低语·数学卷》附册 PDF；同日扩为 7 章镜像主本。新增第 6 章《硬件感知算法的数学》（Roofline、Hong–Kung I/O 下界、FlashAttention 在线 softmax 推导、RingAttention 通信复杂度）与第 7 章《后 Transformer 时代的数学》（HiPPO LegS、S4 零阶保持离散化、Mamba 选择性扫描并行关联律、线性注意力核函数分解、SSD 对偶、MDLM 扩散语言模型）。同日补全 §7.8《世界模型与预测编码的数学》（Rao–Ballard、Friston 变分自由能、JEPA、VICReg、Kalman、DreamerV3 RSSM）。
+    \item 导言与主本第五章末同步为「上下两半场」架构。主本封面 v1.x → v2.0；数学卷封面 v1.0 → v1.2。
+  \end{itemize}
+
+  \vspace{1em}
+  \noindent\textbf{\color{teal1}v1.0\quad}{\small\color{gray}2026 年 6 月 7 日 \,·\, 首发·三轮事实校验后定稿}
+  {\small\color{gray}\itshape\quad 合并原 v1.0、v1.1——同日首发与校验修订}
+  \begin{itemize}\setlength\itemsep{0.25em}
+    \item 正文 2.24 万字，5 章主体 + 反类比专节 + 公式矩阵维度标注，PDF 共约 39 页。五大主题：信息论 / 几何嵌入（含双曲 Poincaré 球）/ 注意力（RoPE、FlashAttention 在线 softmax）/ 优化（Lion、Shampoo、SOAP、μP 超参迁移）/ 涌现（Grokking 的 Fourier 解析解、渗流相变）。结语含 Mamba/SSM 小节，参考文献 62 条，覆盖至 2026 Q2。
+    \item 视觉：深青「数学大教堂」封面 + 5 张章首抽象艺术插图，统一深青调；封面 48pt 标题、双行副标题、大队长出品署名、可点击邮箱链接、右上版本号角标；水印：每页 45° 斜置大水印「大队长出品」+ 页脚小字水印双重标识。
+    \item 三轮事实校验主修订（1）沃康松机械鸭 18 世纪；（2）GPT-4 图灵测试补充 54\%/22\%/67\% 准确数据与限定；（3）N-Gram off-by-one；（4）DNA 64 密码子中 61 编码、3 终止；（5）语言-DNA「同构」调为「结构相似」；（6）GPT-4 RoPE/μP 限定为未公开披露；（7）Anthropic-Reddit 调为诉讼状态；（8）o1 成本未公开；（9）FlashAttention 明确为额外显存降二次→线性、FLOPs 仍二次；（10）「现代 LLM 无一例外」调为「主要」并留例外；（11）「参数远超 token」补 Chinchilla、LLaMA-3 15T 语境；（12）双曲 Transformer 提升「依任务变化」；（13）渗流为连续二阶相变与启发式类比；（14）农业革命多因素、邓巴数 150 不作刚性阈值。文本（1）导言「学界没有任何一个严肃的研究者」改为「主流研究界并未形成 AGI 已实现的共识」；（2）「LLM 没有任何形式的理解」改为「按当前可公开验证的机制证据，还不足以说明 LLM 具有类似人类的主观理解」。参考文献：Chinchilla 复现段按 Epoch AI 表述调整；Nakaishi 补 Nishikawa、Hukushima 三作者与 arXiv:2406.05335；Adam Sharpness 补 Li、Wen、Lyu；MMLU/HumanEval「陡峭」降调；剪枝相变作者订为 Pesce、He、Caldarelli (2026)；o1 表述改为「AIME/Codeforces/GPQA 上显著强于 GPT-4o」；Jain \& Wallace 结论降为「与梯度重要性弱相关」并补 Wiegreffe \& Pinter 反驳。
+  \end{itemize}
+  \clearpage
+}
+
+% ===== 章首插图命令 =====
+\newcommand{\chapterimage}[2]{%
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.92\linewidth]{#1}
+    \vspace{-0.3em}
+    \par\smallskip
+    {\small\itshape\color{teal2}#2}
+  \end{figure}
+}
