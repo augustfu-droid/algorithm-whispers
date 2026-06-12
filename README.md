@@ -6,16 +6,16 @@
 
 | 文件 | 说明 |
 |---|---|
-| `article.md` | 主本 Markdown 源稿，v2.3 校订版 |
-| `article.pdf` | 主本原出版 PDF + 1 页 v2.3 修订附录，共 70 页 |
-| `mathvol.md` | 数学卷 Markdown 源稿，v1.5 校订版 |
-| `mathvol.pdf` | 数学卷原出版 PDF + 1 页 v1.5 修订附录，共 77 页 |
+| `article.md` | 主本 Markdown 源稿，v2.4（在 v2.3 表达校订基础上追加叙事与题记） |
+| `article.pdf` | 主本完整重排 PDF，共 70 页（v2.4） |
+| `mathvol.md` | 数学卷 Markdown 源稿，v1.6（在 v1.5 编号修复基础上追加工程直觉引子与排版统一） |
+| `mathvol.pdf` | 数学卷完整重排 PDF，共 78 页（v1.6） |
 | `CHANGELOG.md` | 版本修改记录 |
 | `REVIEW_NOTES.md` | 审校问题、已处理项与后续阻塞项 |
 
 ## 主本
 
-主本 `article.md` / `article.pdf` 仍保持七章结构：
+主本 `article.md` / `article.pdf` 保持七章结构：
 
 1. 信息论与语言的概率论本质
 2. 嵌入空间与高维几何
@@ -25,35 +25,35 @@
 6. 从 Attention 到 AI 资本周期
 7. 后 Transformer 时代的架构候选
 
-v2.3 主要校订：
+### v2.4 在 v2.3 基础上的追加
+
+- **第六章新增过渡引言「当指数遇见指数」**：把第 5 章「涌现/相变」的计算复杂度指数膨胀，衔接到第 6 章「资本周期」的 capex 指数膨胀。
+- **九段真实历史引文题记**：导言（Clarke 1962）、Ch1（Shannon 1948）、Ch2（Diaconis & Freedman）、Ch3（Vaswani 2017）、Ch4（Dauphin 2014）、Ch5（P. W. Anderson 1972）、Ch6（Jensen Huang GTC 2024）、Ch7（Albert Gu S4 2022）、尾声（McLuhan 1964）。
+
+### v2.3 已完成的表达校订（保留）
 
 - 将“涌现”“理解”“原罪”等过强表述改为带边界的论断。
 - 补充第六章动态数据口径：Capex、市占率、供应链与价格曲线等数字需继续绑定财报、官方规格或具名研究报告。
-- PDF 保留原出版排版，并追加一页修订附录；正文修订以 `article.md` 为准。
 
 ## 数学卷
 
 数学卷 `mathvol.md` / `mathvol.pdf` 是主本的数学推导附册，覆盖信息论、嵌入几何、注意力矩阵、非凸优化、标度律、硬件感知算法与后 Transformer 架构数学。
 
-v1.5 主要校订：
+### v1.6 在 v1.5 基础上的追加
 
-- 修复 `§7.9` 下小节误写为 `7.8.x` 的编号问题。
+- **§7.1 新增「工程直觉引子」**：从 EWMA / 滑动窗口 + 缓存状态逐步过渡到连续 ODE，为后续 HiPPO / S4 / Mamba 数学搭建直觉地基。
+- **全卷推开「粗体关键转折 + 摘要框」**：§6.2 Hong-Kung 证明、§6.3 FlashAttention 在线 softmax、§4.7 μP 缩放律、§7.2 HiPPO 推导链、§7.3 S4 卷积消元等关键推导节点。
+- **目录修复**：§6.1.1 / §6.2 标题误装正文已拆出独立行；§7.8 子子节移除 § 前缀。
+
+### v1.5 已完成的工作（保留）
+
+- 修复 §7.9 下小节误写为 7.8.x 的编号问题。
 - 确认 Markdown 源稿中未残留 `(??)` 交叉引用占位。
-- PDF 保留原出版排版，并追加一页修订附录；完整重排仍需补齐图片和 LaTeX 构建链。
-
-## 可重编性说明
-
-当前仓库已经有 Markdown 源稿，但尚未包含完整重编 PDF 所需的图片资源与构建模板。缺失资源包括：
-
-- 主本章节图：`ch1_information.png`、`ch2_geometry.png`、`ch3_attention.png`、`ch4_optimization.png`、`ch5_emergence.png`
-- 主本插图：`assets/figs/fig_main_02_01_word2vec_geom.png`、`fig_main_01_01_geometry.png`、`fig_main_03_01_attention_headhunter.png`、`fig_main_04_01_scaling_law.png`、`fig_main_05_01_grokking.png`、`fig_main_06_01_compute_stack.png`、`fig_main_07_01_arch_tree.png`
-- 数学卷插图：`assets/figs/fig_math_03_01_skipgram.png`、`fig_math_05_01_transformer_block.png`、`fig_math_02_01_softmax.png`、`fig_math_03_02_attention_matmul.png`、`fig_math_05_02_rope.png`、`fig_math_06_01_kv_cache.png`、`fig_math_04_01_gradient_descent.png`、`fig_math_07_01_moe.png`
-
-补齐上述资源和 LaTeX 模板后，应重新生成出版级 PDF，并复查目录、书签、公式交叉引用和图像引用。
 
 ## 变更记录
 
-- **v2.3 / 数学卷 v1.5 (2026-06-11)**：源码级校订，追加 PDF 修订附录，记录缺失构建资源。
+- **v2.4 / 数学卷 v1.6 (2026-06-12)**：叙事打磨 + 真实题记 + 全卷排版统一。基于 v2.3 / v1.5 的表达校订线，追加 6 月 12 日批次的叙事与排版改动；完整重排 PDF。
+- **v2.3 / 数学卷 v1.5 (2026-06-11)**：源码级表达校订，追加 PDF 修订附录，记录缺失构建资源。
 - **v2.2 / 数学卷 v1.4 (2026-06-10)**：教学级配图批量补入，主本与数学卷 PDF 发布，并上传 Markdown 源稿。
 - **v2.1.2 (2026-06-09)**：数学卷术语本地化，封面版本修订。
 - **v2.1 (2026-06-08)**：主本重构为七章本，数学卷拆为独立附册，新增产业链与后 Transformer 章节。
