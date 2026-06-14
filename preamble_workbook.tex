@@ -1,0 +1,171 @@
+% ============================================================
+% 《算法的低语·数学卷》独立分册 preamble
+% 基于主册 preamble.tex 精简（去除主册封面与变更日志，新增数学卷封面）
+% ============================================================
+
+\usepackage{fontspec}
+\usepackage[fontset=fandol]{ctex}
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  top=2.7cm, bottom=2.7cm, left=2.8cm, right=2.8cm,
+  headheight=1.2cm, footskip=1.4cm
+}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{calc}
+\usepackage[most]{tcolorbox}
+
+% ---- 颜色（与主册一致）----
+\definecolor{teal1}{RGB}{0,77,89}
+\definecolor{teal2}{RGB}{15,118,135}
+\definecolor{teal3}{RGB}{38,162,180}
+
+% ---- 占位符：用三角形作为导读盒标题前缀 ----
+\newcommand{\faIconStub}{\textbf{\textcolor{teal2}{▶}}}
+
+% ---- 小节导读盒：「这一节在讲什么」----
+\newtcolorbox{sectionintuition}{
+  enhanced,
+  colback=teal3!6,
+  colframe=teal2,
+  boxrule=0.6pt,
+  arc=3pt,
+  left=10pt, right=10pt, top=8pt, bottom=8pt,
+  before skip=8pt, after skip=10pt,
+  fonttitle=\bfseries\color{teal1},
+  title={\faIconStub\,这一节在讲什么},
+  attach title to upper,
+  after title={\par\vspace{4pt}}
+}
+
+% ---- 超链接 ----
+\hypersetup{
+  colorlinks=true,
+  linkcolor=teal2,
+  urlcolor=teal2,
+  citecolor=teal2,
+  pdftitle={算法的低语·数学卷习题伴读 v1.2 全册},
+  pdfauthor={大队长}
+}
+
+% ---- 页眉页脚（与主册风格统一）----
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gray}\itshape 算法的低语·数学卷}
+\fancyhead[R]{\small\color{gray}\itshape 从公式到推导}
+\fancyfoot[C]{\small\color{gray}\thepage}
+\fancyfoot[R]{\small\color{gray}\itshape 大队长出品}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\headrule}{\color{teal3!40}\hrule width\headwidth height\headrulewidth}
+
+% ---- 水印（每页对角线「大队长出品」）----
+\AddToShipoutPictureBG{%
+  \ifnum\value{page}>1
+    \put(\LenToUnit{0.20\paperwidth},\LenToUnit{0.45\paperheight}){%
+      \rotatebox{45}{\color{gray!8}\fontsize{120}{120}\selectfont\bfseries 大队长出品}%
+    }%
+  \fi
+}
+
+% ---- 标题样式 ----
+\titleformat{\section}
+  {\Large\bfseries\color{teal1}}
+  {\thesection}{0.6em}{}
+  [\vspace{0.2em}{\color{teal3!50}\hrule height 0.5pt}]
+
+\titleformat{\subsection}
+  {\large\bfseries\color{teal2}}
+  {\thesubsection}{0.5em}{}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{teal2}}
+  {\thesubsubsection}{0.4em}{}
+
+% ---- 段落 ----
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.75em}
+\linespread{1.38}
+
+% ---- 列表间距优化 ----
+\setlist{itemsep=0.35em, parsep=0.25em, topsep=0.4em}
+
+% ---- 题目级标题 (subsubsubsection 在 pandoc 用 \paragraph) 额外上下间距 ----
+\titleformat{\paragraph}
+  {\normalsize\bfseries\color{teal1}}
+  {\theparagraph}{0.4em}{}
+\titlespacing*{\paragraph}
+  {0pt}{1.4em plus 0.3em minus 0.2em}{0.6em}
+
+% ---- 节、小节标题上下额外联试分割感 ----
+\titlespacing*{\section}
+  {0pt}{2.2em plus 0.4em minus 0.2em}{1.0em}
+\titlespacing*{\subsection}
+  {0pt}{1.6em plus 0.3em minus 0.2em}{0.7em}
+\titlespacing*{\subsubsection}
+  {0pt}{1.2em plus 0.3em minus 0.2em}{0.5em}
+
+% ---- 数学卷封面 ----
+\newcommand{\makemathcoverpage}{%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \pagecolor{teal1}
+    \begin{center}
+      \vspace*{2.5cm}
+      {\color{white!80}\rule{6cm}{0.6pt}\par}
+      \vspace{1cm}
+      {\fontsize{52}{60}\selectfont\bfseries\color{white} 算法的低语\par}
+      \vspace{0.6cm}
+      {\fontsize{30}{36}\selectfont\bfseries\color{teal3!40!white} 数学卷·习题伴读\par}
+      \vspace{0.4cm}
+      {\fontsize{16}{20}\selectfont\itshape\color{teal3!60!white} 从看懂到会用\par}
+      \vspace{1cm}
+      {\color{white!80}\rule{6cm}{0.6pt}\par}
+
+      \vspace{2.5cm}
+      \begin{minipage}{0.72\textwidth}
+        \itshape\color{white!75}\small\setlength{\parskip}{0.5em}
+        本册是《算法的低语·数学卷》的姊妹册。主册负责把从香农熵到扩散模型的每个公式讲明白，伴读负责让读者亲手算出来。
+
+        全书 52 节与主册节号逐一对应。每节提供：
+
+        \begin{itemize}\setlength\itemsep{0.2em}\color{white!75}
+          \item \textbf{公式卡片}：该节必记公式·变量释义·维度表
+          \item \textbf{轻·中·重三档题}：从口算代入到纸笔全推
+          \item \textbf{完整推导解答}：每步为什么能走、用了哪条定理
+          \item \textbf{错点与陷阱提示}：看不见的踩坑经验
+        \end{itemize}
+
+        适合与主册配套阅读，也可独立作为推导示例集使用。
+      \end{minipage}
+
+      \vfill
+      {\color{white}\Large\bfseries 大队长\enspace 出品\par}
+      \vspace{0.3em}
+      {\color{teal3!50!white}\small\href{mailto:fqsx@mail.ustc.edu.cn}{fqsx@mail.ustc.edu.cn}\par}
+      \vspace{0.6em}
+      {\color{teal3!40!white}\small\bfseries v1.2 全册 \,·\, 51 节·汇编完整版\par}
+      \vspace{0.5cm}
+    \end{center}
+    \AddToShipoutPictureFG*{%
+      \AtPageUpperLeft{%
+        \put(40,-50){\color{white!50}\scriptsize\itshape 大队长出品}%
+      }%
+      \AtPageUpperLeft{%
+        \put(\LenToUnit{\paperwidth-3.2cm},-30){\color{teal3!50!white}\scriptsize\bfseries v1.6}%
+      }%
+    }
+    \clearpage
+    \nopagecolor
+  \end{titlepage}
+}
