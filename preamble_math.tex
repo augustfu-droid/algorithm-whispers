@@ -55,7 +55,7 @@
   linkcolor=teal2,
   urlcolor=teal2,
   citecolor=teal2,
-  pdftitle={算法的低语·数学卷 v1.6},
+  pdftitle={算法的低语·数学卷 v1.7},
   pdfauthor={大队长}
 }
 
@@ -69,9 +69,9 @@
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\color{teal3!40}\hrule width\headwidth height\headrulewidth}
 
-% ---- 水印（每页对角线「大队长出品」）----
+% ---- 水印（每页对角线「大队长出品」，仅正文页；封面与版权页跳过）----
 \AddToShipoutPictureBG{%
-  \ifnum\value{page}>1
+  \ifnum\value{page}>2
     \put(\LenToUnit{0.20\paperwidth},\LenToUnit{0.45\paperheight}){%
       \rotatebox{45}{\color{gray!8}\fontsize{120}{120}\selectfont\bfseries 大队长出品}%
     }%
@@ -94,8 +94,8 @@
 
 % ---- 段落 ----
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.75em}
-\linespread{1.38}
+\setlength{\parskip}{0.8em}
+\linespread{1.45}
 
 % 列表间距
 \setlist{itemsep=0.35em, parsep=0.25em, topsep=0.4em}
@@ -108,54 +108,45 @@
 \titlespacing*{\subsubsection}
   {0pt}{1.2em plus 0.3em minus 0.2em}{0.5em}
 
-% ---- 数学卷封面 ----
+% ---- 数学卷封面（紧凑版，单页容纳全部信息）----
 \newcommand{\makemathcoverpage}{%
   \begin{titlepage}
     \thispagestyle{empty}
     \pagecolor{teal1}
     \begin{center}
-      \vspace*{2.5cm}
+      \vspace*{1.8cm}
       {\color{white!80}\rule{6cm}{0.6pt}\par}
-      \vspace{1cm}
-      {\fontsize{52}{60}\selectfont\bfseries\color{white} 算法的低语\par}
-      \vspace{0.6cm}
-      {\fontsize{30}{36}\selectfont\bfseries\color{teal3!40!white} 数\enspace 学\enspace 卷\par}
-      \vspace{0.4cm}
-      {\fontsize{16}{20}\selectfont\itshape\color{teal3!60!white} 从公式到推导\par}
-      \vspace{1cm}
+      \vspace{0.8cm}
+      {\fontsize{48}{56}\selectfont\bfseries\color{white} 算法的低语\par}
+      \vspace{0.5cm}
+      {\fontsize{28}{32}\selectfont\bfseries\color{teal3!40!white} 数\enspace 学\enspace 卷\par}
+      \vspace{0.3cm}
+      {\fontsize{15}{18}\selectfont\itshape\color{teal3!60!white} 从公式到推导\par}
+      \vspace{0.8cm}
       {\color{white!80}\rule{6cm}{0.6pt}\par}
 
-      \vspace{2.5cm}
+      \vspace{1.8cm}
       \begin{minipage}{0.72\textwidth}
-        \itshape\color{white!75}\small\setlength{\parskip}{0.5em}
-        本册是《算法的低语》主本的姊妹册。镜像主本上下两半场的七章结构，对每个 AI 概念背后的数学给出两层呈现：
+        \itshape\color{white!75}\small\setlength{\parskip}{0.4em}
+        本册是《算法的低语》主本的姊妹册，镜像主本7章结构，对每个AI概念背后的数学给出三层呈现：
 
-        \begin{itemize}\setlength\itemsep{0.2em}\color{white!75}
-          \item \textbf{直觉}（150–250 字）：回顾概念由来与几何含义
-          \item \textbf{严格}（400–800 字 + 公式块）：定义、推导步骤、矩阵维度
+        \begin{itemize}\setlength\itemsep{0.15em}\color{white!75}
+          \item \textbf{直觉}（150–250字）：回顾概念由来与几何含义
+          \item \textbf{严格}（400–800字 + 公式块）：定义、推导步骤、矩阵维度
+          \item \textbf{全编号}：426条公式逐一编号，叙述以「式(X.Y.N)」明确引用
         \end{itemize}
 
-        面向已具备线性代数、微积分、概率统计本科基础的进阶读者。
-
-        建议与主本《算法的低语》配套阅读；读完主本某章后再翻附册对应章节。
+        面向已具备线性代数、微积分、概率统计本科基础的进阶读者。建议与主本《算法的低语》配套阅读。
       \end{minipage}
 
       \vfill
       {\color{white}\Large\bfseries 大队长\enspace 出品\par}
-      \vspace{0.3em}
-      {\color{teal3!50!white}\small\href{mailto:fqsx@mail.ustc.edu.cn}{fqsx@mail.ustc.edu.cn}\par}
-      \vspace{0.6em}
-      {\color{teal3!40!white}\small\bfseries Version 1.6 \,·\, 每节直觉段重写为深度逻辑链版\par}
-      \vspace{0.5cm}
+      \vspace{0.25em}
+      {\color{teal3!55!white}\small\href{mailto:fqsx@mail.ustc.edu.cn}{fqsx@mail.ustc.edu.cn}\par}
+      \vspace{0.4em}
+      {\color{teal3!45!white}\footnotesize v1.7\;·\;公式全编号版\;·\;52 节\,/\,426 条编号式\par}
+      \vspace{0.4cm}
     \end{center}
-    \AddToShipoutPictureFG*{%
-      \AtPageUpperLeft{%
-        \put(40,-50){\color{white!50}\scriptsize\itshape 大队长出品}%
-      }%
-      \AtPageUpperLeft{%
-        \put(\LenToUnit{\paperwidth-3.2cm},-30){\color{teal3!50!white}\scriptsize\bfseries v1.6}%
-      }%
-    }
     \clearpage
     \nopagecolor
   \end{titlepage}
