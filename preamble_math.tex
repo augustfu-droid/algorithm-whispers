@@ -41,6 +41,24 @@
 % ---- 占位符：用三角形作为导读盒标题前缀 ----
 \newcommand{\faIconStub}{\textbf{\textcolor{teal2}{▶}}}
 
+% ---- 核心概念横条：每节标题下方,3-6 个关键名词,紧贴节标题不抢戏 ----
+\newtcolorbox{keytermsbox}{
+  enhanced,
+  colback=teal3!4,
+  colframe=teal3!25,
+  boxrule=0.4pt,
+  arc=2pt,
+  left=8pt, right=8pt, top=4pt, bottom=4pt,
+  before skip=2pt, after skip=8pt,
+  fontupper=\small
+}
+\newcommand{\keyterms}[1]{%
+  \begin{keytermsbox}%
+    \textbf{\color{teal1}核心概念}\hspace{0.6em}\textcolor{teal3!50}{|}\hspace{0.6em}%
+    \color{teal1}#1%
+  \end{keytermsbox}%
+}
+
 % ---- 小节导读盒：「这一节在讲什么」----
 \newtcolorbox{sectionintuition}{
   enhanced,

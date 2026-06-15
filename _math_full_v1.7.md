@@ -40,6 +40,8 @@
 
 ## §1.1 香农的赌局：语言是对抗熵的工具
 
+\keyterms{香农熵 \,$\cdot$\, 条件熵 \,$\cdot$\, 互信息 \,$\cdot$\, KL 散度 \,$\cdot$\, 交叉熵 \,$\cdot$\, 困惑度}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么要给「不确定性」一个数学定义}？1948 年之前，工程师只能用「信道质量好」「信号清晰」这种模糊的描述。香农提出：把不确定性当作一个可加、可比、可优化的量，整个通信工程就变成了数学。\par\medskip
@@ -256,6 +258,8 @@ $$
 
 ## §1.2 从马尔可夫链到 N-Gram：第一代尝试的局限
 
+\keyterms{马尔可夫假设 \,$\cdot$\, 最大似然估计 \,$\cdot$\, N-Gram \,$\cdot$\, Kneser-Ney 平滑 \,$\cdot$\, 稀疏性}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么 N-Gram 会失败}？1990 年代之前，几乎所有语言模型都是 N-Gram。它的失败不是「调参不够」，而是数学上注定的。\par\medskip
@@ -421,6 +425,8 @@ $$
 
 ## §1.3 跨界映射：语言序列与 DNA 碱基对
 
+\keyterms{熵率 \,$\cdot$\, 平稳过程 \,$\cdot$\, SMB 定理 \,$\cdot$\, 典型序列}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么要谈「熵率」}？前两节的熵 $H(X)$ 是针对单个随机变量定义的，但语言是一长串符号。我们需要一个量来刻画「一个无穷长的序列每符号平均携带多少信息」。\par\medskip
@@ -569,6 +575,8 @@ $$
 
 ## §1.4 反类比：当 DNA 的隐喻失效
 
+\keyterms{熵率上限 \,$\cdot$\, 参数空间稀疏性 \,$\cdot$\, 遗传码简并性 \,$\cdot$\, 隐马尔可夫模型}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么 DNA 的隐喻不能滥用}？前一节展示了语言和 DNA 在信息论框架下的共性。这一节给出三堵铁墙：**字母表量级差异、稀疏性差异、冗余的物理本质差异**。\par\medskip
@@ -676,6 +684,8 @@ $$
 # 数学卷·第 2 章：嵌入空间与高维几何
 
 ## §2.1 词嵌入：为什么字典救不了机器
+
+\keyterms{one-hot 编码 \,$\cdot$\, 嵌入矩阵 \,$\cdot$\, 余弦相似度 \,$\cdot$\, 分布式表示}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -786,6 +796,8 @@ $$
 ---
 
 ## §2.2 语义的坐标系：那个被讲烂了的公式
+
+\keyterms{Skip-gram \,$\cdot$\, 负采样 \,$\cdot$\, softmax 瓶颈 \,$\cdot$\, 类比向量算术 \,$\cdot$\, 线性表示假说}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -932,6 +944,8 @@ $$
 
 ## §2.3 高维几何的诡异世界
 
+\keyterms{球壳质量集中 \,$\cdot$\, Johnson-Lindenstrauss 引理 \,$\cdot$\, 超位置 \,$\cdot$\, 随机向量近正交}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么三维直觉在数百维的嵌入空间里几乎全部失效}？当维度从 3 增长到 512 或 4096 时，「近」「远」「随机」这些概念的含义发生了根本性的变化，忽视这一点会导致对嵌入空间的严重误判。\par\medskip
@@ -1066,6 +1080,8 @@ $$
 
 ## §2.4 跨界映射：从罗马路网到曼哈顿距离
 
+\keyterms{$L^p$ 范数 \,$\cdot$\, 马氏距离 \,$\cdot$\, 加权内积 \,$\cdot$\, 内积空间}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么同一个「距离」概念，换个度量方式就面目全非}？欧氏距离只是 $L^p$ 范数家族中的一员。在语义空间中，不同维度的「一个单位」代表的语义差异强度各不相同，一把尺子量不了所有的方向。\par\medskip
@@ -1189,6 +1205,8 @@ $$
 
 ## §2.5 反类比：当几何隐喻失效
 
+\keyterms{各向异性 \,$\cdot$\, 椎体效应 \,$\cdot$\, 白化变换 \,$\cdot$\, 协方差矩阵}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么嵌入空间的几何比我们想象的更「扭曲」}？词频统计在训练过程中悄悄地扭曲了向量空间的几何结构：高频词聚集在一个狭窄的锥形区域，嵌入空间严重各向异性，余弦相似度和向量加减在这种条件下都面临系统性偏差。\par\medskip
@@ -1296,6 +1314,8 @@ $$
 ---
 
 ## §2.6 跨越欧氏：当表示空间不再「平直」
+
+\keyterms{黎曼流形 \,$\cdot$\, Poincaré 球 \,$\cdot$\, 双曲距离 \,$\cdot$\, 指数映射}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -1454,6 +1474,8 @@ $$
 
 ## §3.1 从 RNN 到变换器（Transformer）：序列建模的范式革命
 
+\keyterms{梯度消失 \,$\cdot$\, Jacobian 矩阵连乘 \,$\cdot$\, 自注意力 \,$\cdot$\, Transformer}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么 RNN 不能并行}？RNN 把序列理解为一条因果链，每步计算依赖前一步的隐状态。这种设计在直觉上符合「逐字阅读」的体验，却注定无法并行——时序依赖锁死了硬件。\par\medskip
@@ -1579,6 +1601,8 @@ $$
 ---
 
 ## §3.2 注意力公式的拆解：QKV 的真实含义
+
+\keyterms{QKV 投影 \,$\cdot$\, 缩放因子 $\sqrt{d_k}$ \,$\cdot$\, softmax 归一化 \,$\cdot$\, 多头注意力}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -1734,6 +1758,8 @@ $$
 
 ## §3.3 矩阵乘法的大规模并发：为什么 AI 是 GPU 的盛宴
 
+\keyterms{算术强度 \,$\cdot$\, Roofline 模型 \,$\cdot$\, SIMD 并行 \,$\cdot$\, 计算受限}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么矩阵乘法和 GPU 如此般配}？GPU 的设计哲学是「以宽度换速度」——数千个简单核心并发执行同一条指令，作用于不同数据。矩阵乘法天然吻合：每个输出元素是独立内积，可完全并行。\par\medskip
@@ -1866,6 +1892,8 @@ $$
 ---
 
 ## §3.4 RoPE：把位置编码从加法变成旋转
+
+\keyterms{RoPE \,$\cdot$\, 旋转位置编码 \,$\cdot$\, 相对位置编码 \,$\cdot$\, 旋转群SO(2) \,$\cdot$\, 块对角旋转矩阵 \,$\cdot$\, 傅里叶多频率分解}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -2038,6 +2066,8 @@ $$
 
 ## §3.5 FlashAttention：当注意力撞上内存墙
 
+\keyterms{FlashAttention \,$\cdot$\, 在线softmax \,$\cdot$\, 分块计算（Tiling） \,$\cdot$\, HBM访问复杂度 \,$\cdot$\, 算术强度}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么标准 attention 慢}？不是因为 FLOPs 太多，而是因为 $n \times n$ 的注意力矩阵要在慢速 HBM 和快速 SRAM 之间反复搬运，内存带宽成了瓶颈。\par\medskip
@@ -2206,6 +2236,8 @@ FlashAttention 将内存复杂度从 $O(n^2)$ 降至 $O(n)$（仅需存储式 (3
 
 ## §3.6 注意力的真实身份：关联记忆，而非「注意力」
 
+\keyterms{关联记忆 \,$\cdot$\, 现代Hopfield网络 \,$\cdot$\, log-sum-exp能量函数 \,$\cdot$\, 不动点迭代 \,$\cdot$\, 指数存储容量}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么「注意力」这个名字有误导性}？认知心理学的注意力是有限资源的主动分配；而 softmax attention 在数学上更接近「内容寻址的关联记忆检索」——给定查询模式，在一组存储模式中检索最接近的内容。\par\medskip
@@ -2360,6 +2392,8 @@ $$
 
 ## §3.7 一个被忽略的争论：注意力权重 ≠ 解释
 
+\keyterms{梯度归因 \,$\cdot$\, 注意力权重可解释性 \,$\cdot$\, 电路分析 \,$\cdot$\, Value矩阵低秩}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么不能用注意力权重解释模型}？因为注意力权重 $\alpha_{ij}$ 只是计算图中的一个中间量——它衡量的是 Value 向量的线性组合系数，而非输入 token 对最终预测的「因果贡献」。\par\medskip
@@ -2470,6 +2504,8 @@ $$
 
 ## §3.8 跨界映射：宏观工业供应链
 
+\keyterms{softmax归一化 \,$\cdot$\, 多头注意力 \,$\cdot$\, Query-Key-Value解耦}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么用供应链类比 attention}？注意力机制的「匹配-归一化-加权汇总」流程，在逻辑结构上与全球供应链的「需求发布-能力匹配-资源调度」完全对应，能把抽象矩阵运算还原为可感知的经济直觉。\par\medskip
@@ -2511,6 +2547,8 @@ $$
 ---
 
 ## §3.9 反类比：当供应链隐喻失效
+
+\keyterms{softmax统计归一化 \,$\cdot$\, 涌现特征 \,$\cdot$\, 机械可解释性}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -2582,6 +2620,8 @@ $$
 ---
 
 ## §4.1 损失函数：如何用数学定义"机器犯错"
+
+\keyterms{交叉熵损失 \,$\cdot$\, 最大似然估计（MLE） \,$\cdot$\, KL散度 \,$\cdot$\, L2正则化 \,$\cdot$\, Softmax梯度约分}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -2781,6 +2821,8 @@ $$
 ---
 
 ## §4.2 梯度下降：在黑暗中沿着最陡的方向下山
+
+\keyterms{梯度下降 \,$\cdot$\, Adam优化器 \,$\cdot$\, 动量法 \,$\cdot$\, 偏差修正 \,$\cdot$\, Lipschitz常数 \,$\cdot$\, RMSprop}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -2999,6 +3041,8 @@ $$
 
 ## §4.3 高维非凸优化的反直觉：为什么 SGD 居然能工作
 
+\keyterms{鞍点 \,$\cdot$\, 随机矩阵理论 \,$\cdot$\, SGD隐式正则化 \,$\cdot$\, 模式连通性 \,$\cdot$\, Hessian谱}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么高维非凸优化看起来不可能，却在实践中奏效}？经典理论告诉我们梯度下降会陷入局部极小值，但真正的障碍根本不是局部极小值——而是鞍点。\par\medskip
@@ -3112,6 +3156,8 @@ $$
 ---
 
 ## §4.4 损失景观的可视化：黑暗中的地形图
+
+\keyterms{损失景观 \,$\cdot$\, 平坦极小值 \,$\cdot$\, SAM（锐度感知最小化） \,$\cdot$\, 泛化上界 \,$\cdot$\, 残差连接（skip connection）}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -3236,6 +3282,8 @@ $$
 
 ## §4.5 μP：超参数迁移的"元定律"
 
+\keyterms{μP（最大更新参数化） \,$\cdot$\, 激活更新量Δh \,$\cdot$\, NTK参数化 \,$\cdot$\, 特征学习极限 \,$\cdot$\, 超参数迁移}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么小模型调好的学习率不能直接用于大模型}？标准初始化下，激活的更新量 $\Delta h$ 随宽度 $n$ 以 $O(\sqrt{n})$ 发散，最优学习率必须随宽度缩放——迁移根本不成立。\par\medskip
@@ -3359,6 +3407,8 @@ $$
 
 ## §4.6 Lion 与 Shampoo：Adam 不是终点
 
+\keyterms{Lion优化器 \,$\cdot$\, Shampoo \,$\cdot$\, Kronecker分解预条件 \,$\cdot$\, Gauss-Newton预条件 \,$\cdot$\, SOAP}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么要挑战 Adam}？Adam 需要同时存储一阶矩和二阶矩，优化器状态内存占总显存的大头；同时，Adam 对学习率和权重衰减的耦合在大规模训练中引发微妙的调参问题。\par\medskip
@@ -3478,6 +3528,8 @@ SOAP（2024）在 Shampoo 基础上融合 Adam：将梯度旋转到 Kronecker �
 ---
 
 ## §4.7 μP 的完整面貌：超参数迁移背后的数学
+
+\keyterms{Tensor Programs框架 \,$\cdot$\, abc参数化 \,$\cdot$\, 高斯过程收敛 \,$\cdot$\, 特征学习极限 \,$\cdot$\, 激活稳定性条件}
 
 > **本节的关键论证**：(1) 在无穷宽极限下，前向激活方差应保持 $\Theta(1)$（**激活稳定性条件**）；(2) 反向梯度方差也应保持 $\Theta(1)$（**梯度稳定性条件**）；(3) 同时满足两条 → 输入层、隐藏层、输出层的学习率必须按 $\Theta(1/n)$、$\Theta(1/n)$、$\Theta(1)$ 缩放（**μP 缩放律**）。**所有「凭空出现」的 $1/n$ 因子都来自这两条平衡条件**。
 
@@ -3600,6 +3652,8 @@ $$
 
 ## §4.8 跨界类比：复杂系统的工程管理
 
+\keyterms{链式法则 \,$\cdot$\, Adam自适应步长 \,$\cdot$\, μP规模不变性 \,$\cdot$\, n-均匀性 \,$\cdot$\, 方差反比调整}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么用「工程管理」来类比神经网络训练}？大模型训练涉及数以亿计的参数协同更新，每个参数的调整都影响全局，这与超大型组织的绩效分摊问题在结构上高度相似。\par\medskip
@@ -3670,6 +3724,8 @@ Adam的方差反比步长 ←→ 不确定性越大越保守（管理原则）
 ---
 
 ## §4.9 反类比：工程管理隐喻的失效边界
+
+\keyterms{随机截断 \,$\cdot$\, 功能涌现 \,$\cdot$\, 非凸损失景观 \,$\cdot$\, 随机动力系统 \,$\cdot$\, 鞍点主导}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -3758,6 +3814,8 @@ Adam的方差反比步长 ←→ 不确定性越大越保守（管理原则）
 ---
 
 ## §5.1 尺度律（Scaling Law）：算力即权力的冷酷物理感
+
+\keyterms{幂律 \,$\cdot$\, 幂指数α \,$\cdot$\, 不可归约损失 \,$\cdot$\, 联合损失函数L(N,D) \,$\cdot$\, compute-optimal配比 \,$\cdot$\, 拉格朗日优化}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -3942,6 +4000,8 @@ $$
 
 ## §5.2 Chinchilla 的颠覆与再颠覆
 
+\keyterms{IsoFLOP实验设计 \,$\cdot$\, Chinchilla最优 \,$\cdot$\, 信息矩阵条件数 \,$\cdot$\, 参数-数据最优比 \,$\cdot$\, 推理成本修正 \,$\cdot$\, Sardana修正}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么同一个损失函数会给出截然不同的结论}？因为拟合方法不同。Kaplan 用参数固定、数据变化的实验，Hoffmann 用等算力切片（IsoFLOP），两者在信息矩阵的条件数上差异巨大，导致最优配比从「参数优先」翻转为「1:20 等比扩展」。\par\medskip
@@ -4078,6 +4138,8 @@ $$
 
 ## §5.3 数据墙与 §5.4 推理时计算
 
+\keyterms{数据墙 \,$\cdot$\, 模型崩溃 \,$\cdot$\, Wasserstein-2距离 \,$\cdot$\, 推理时计算缩放 \,$\cdot$\, Best-of-K采样 \,$\cdot$\, 等价token折算率}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么 scaling 会撞墙}？人类产生的文本总量有限——约 $3 \times 10^{14}$ token——而当前扩展速率将在数年内耗尽这一资源。数据墙不是性能瓶颈，而是一个约束边界：$D \leq D_{\max}$，一旦触碰，损失函数里 $B/D^\beta$ 项就被钉死，无论 $N$ 多大，损失都有一个受数据支配的下界。\par\medskip
@@ -4196,6 +4258,8 @@ $$
 ---
 
 ## §5.5 涌现：神话还是幻觉？
+
+\keyterms{涌现能力 \,$\cdot$\, 精确匹配指标 \,$\cdot$\, 非线性指标放大 \,$\cdot$\, token级log-likelihood \,$\cdot$\, induction head \,$\cdot$\, 指标伪影}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -4334,6 +4398,8 @@ $$
 ---
 
 ## §5.6–§5.7 Grokking 的数学解剖：从死记到顿悟
+
+\keyterms{Grokking延迟泛化 \,$\cdot$\, 傅里叶电路 \,$\cdot$\, 循环群表示论 \,$\cdot$\, 权重衰减 \,$\cdot$\, 信噪比动力学}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -4487,6 +4553,8 @@ $$
 
 ## §5.8 渗流相变：把 Scaling Law 焊到统计物理上
 
+\keyterms{渗流临界现象 \,$\cdot$\, 临界指数 \,$\cdot$\, 序参量 \,$\cdot$\, 二阶相变 \,$\cdot$\, 关联长度 \,$\cdot$\, 神经网络剪枝相变}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么渗流理论是描述涌现的合适框架}？因为它正好捕捉了「单元素平滑增长 → 整体性质急剧变化」的模式：每个格点的占据概率 $p$ 连续增大，但最大连通簇的尺寸在临界点 $p_c$ 处从对数级跳到线性级。这与「单概念能力平滑增长、复合推理突然可行」的结构同构。\par\medskip
@@ -4636,6 +4704,8 @@ $$
 
 ## §5.9 跨界映射与 §5.10 反类比：相变叙事的边界
 
+\keyterms{热力学极限 \,$\cdot$\, crossover \,$\cdot$\, 自由能解析性 \,$\cdot$\, 不可逆性}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么「AI 涌现是相变」这个类比虽然有吸引力但存在根本性缺陷}？物理相变有三个严格要求：热力学极限（$N \to \infty$）、普适临界指数、时间反演对称（可逆）——AI 涌现一个都不满足。\par\medskip
@@ -4766,6 +4836,8 @@ $$
 ---
 
 ## §6.1 Roofline 模型的形式化
+
+\keyterms{算术强度 \,$\cdot$\, 脊点I* \,$\cdot$\, 内存受限 \,$\cdot$\, 计算受限 \,$\cdot$\, GEMM}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -4959,6 +5031,8 @@ $$
 ---
 
 ## §6.2 I/O 复杂度的下界（Hong-Kung 1981）
+
+\keyterms{红蓝卵石游戏 \,$\cdot$\, S-划分 \,$\cdot$\, I/O复杂度下界 \,$\cdot$\, AM-GM不等式 \,$\cdot$\, 分块矩阵乘}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -5163,6 +5237,8 @@ $$
 ---
 
 ## §6.3 FlashAttention 的 I/O 分析（Dao et al. 2022）
+
+\keyterms{FlashAttention \,$\cdot$\, 在线softmax递推 \,$\cdot$\, 分块tiling \,$\cdot$\, I/O复杂度 \,$\cdot$\, SRAM约束}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -5431,6 +5507,8 @@ Dao（2023）在 FlashAttention 的基础上提出三项改进，不改变 I/O �
 
 ## §6.4 环形注意力（RingAttention）的通信复杂度（Liu et al. 2024）
 
+\keyterms{RingAttention \,$\cdot$\, 环形通信 \,$\cdot$\, 通信复杂度 \,$\cdot$\, 局部脊点 \,$\cdot$\, 流水线重叠}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么把 FlashAttention 直接搬到多卡上会出问题}？单卡 SRAM 装不下超长序列的 $K, V$，多卡分片后每张卡的 $Q_p$ 需要访问所有卡的 $K, V$——朴素的 AllGather 会让每张卡内存随 $N$ 线性增长，同时通信量也不随卡数增加而分摊。RingAttention 用环形流水线同时解决这两个问题。\par\medskip
@@ -5627,6 +5705,8 @@ $$
 
 ## §6.5 算术强度的演化：从 V100 到 B200
 
+\keyterms{脊点 \,$\cdot$\, 算术强度 \,$\cdot$\, Roofline 模型 \,$\cdot$\, 增速比 \,$\cdot$\, 量化精度 \,$\cdot$\, 算子融合}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么每一代 GPU 升级，「需要多高的算术强度才能用满算力」这个门槛也在升高}？算力增速长期快于带宽增速，脊点 $I^* = P_\text{peak}/\beta$ 就随之上移——上一代计算受限的 kernel，在这一代可能已经变成内存受限。\par\medskip
@@ -5761,6 +5841,8 @@ $$
 ---
 
 ## §6.6 反类比与边界
+
+\keyterms{Roofline 模型 \,$\cdot$\, Hong-Kung 定理 \,$\cdot$\, FlashAttention \,$\cdot$\, RingAttention \,$\cdot$\, 层次化 Roofline \,$\cdot$\, Striped Attention}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -5932,6 +6014,8 @@ FlashAttention 的最优性定理（Dao et al. 2022, Theorem 2）同时给出了
 ---
 
 ## §7.1 状态空间模型的连续形式
+
+\keyterms{线性时不变系统 \,$\cdot$\, 状态空间模型 \,$\cdot$\, 矩阵指数 \,$\cdot$\, 卷积核 \,$\cdot$\, 传递函数}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -6154,6 +6238,8 @@ $$
 ---
 
 ## §7.2 HiPPO 框架的严格推导
+
+\keyterms{HiPPO \,$\cdot$\, 勒让德多项式 \,$\cdot$\, 最优投影 \,$\cdot$\, LegS 测度 \,$\cdot$\, LegT 测度}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -6387,6 +6473,8 @@ $$
 
 ## §7.3 S4 的离散化与卷积核
 
+\keyterms{S4 \,$\cdot$\, ZOH 离散化 \,$\cdot$\, 离散卷积核 \,$\cdot$\, DPLR 参数化 \,$\cdot$\, Cauchy 矩阵向量积 \,$\cdot$\, Woodbury 恒等式}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么需要离散化}？连续 ODE 是理论框架，但计算机处理的是离散 token 序列。必须将 $h'(t) = Ah(t)+Bx(t)$ 转换成离散递推 $h_k = \bar{A}h_{k-1} + \bar{B}x_k$，才能在 GPU 上运行。\par\medskip
@@ -6576,6 +6664,8 @@ $$
 
 ## §7.4 Mamba 的选择性扫描
 
+\keyterms{Mamba \,$\cdot$\, 选择性机制 \,$\cdot$\, Blelloch 并行扫描 \,$\cdot$\, 输入依赖离散化 \,$\cdot$\, 并行前缀积}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么 S4 还不够}？S4 的 LTI 假设意味着模型对所有位置的相同输入给出相同响应，无法分辨「这个 token 需要记住」还是「这个 token 需要忽略」。Mamba 的解决方案是将 $\Delta_t, B_t, C_t$ 设为输入 $x_t$ 的函数。\par\medskip
@@ -6754,6 +6844,8 @@ $$
 ---
 
 ## §7.5 线性注意力的核函数视角
+
+\keyterms{线性注意力 \,$\cdot$\, 核函数分解 \,$\cdot$\, 特征映射 \,$\cdot$\, Fast Weight Memory \,$\cdot$\, FAVOR+}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -6944,6 +7036,8 @@ $$
 
 ## §7.6 Mamba、线性注意力（Attention）与 RNN 的统一视角
 
+\keyterms{广义线性递推 \,$\cdot$\, SSD 对偶性 \,$\cdot$\, GLA \,$\cdot$\, 半分离矩阵 \,$\cdot$\, Mamba-2}
+
 ```{=latex}
 \begin{sectionintuition}
 \textbf{为什么要统一这三类模型}？Mamba、线性注意力、门控 RNN 看似来自三条完全不同的研究路线，但它们的推理时递推结构高度相似。找到统一框架能指导新模型的设计，并解释为什么它们有相似的长处和短处。\par\medskip
@@ -7087,6 +7181,8 @@ $$
 ---
 
 ## §7.7 扩散语言模型的数学
+
+\keyterms{离散扩散 \,$\cdot$\, DDPM \,$\cdot$\, 吸收态转移矩阵 \,$\cdot$\, MDLM \,$\cdot$\, 加权 MLM 损失}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -7269,6 +7365,8 @@ $$
 ---
 
 ## §7.8 世界模型与预测编码的数学
+
+\keyterms{预测编码 \,$\cdot$\, 变分自由能 \,$\cdot$\, JEPA \,$\cdot$\, VICReg \,$\cdot$\, Kalman 滤波 \,$\cdot$\, DreamerV3}
 
 ```{=latex}
 \begin{sectionintuition}
@@ -7494,6 +7592,8 @@ $$
 ---
 
 ## §7.9 反类比与边界
+
+\keyterms{HiPPO 测度依赖 \,$\cdot$\, 线性注意力检索上界 \,$\cdot$\, 并行扫描数值稳定性 \,$\cdot$\, 有限秩特征映射}
 
 ```{=latex}
 \begin{sectionintuition}
