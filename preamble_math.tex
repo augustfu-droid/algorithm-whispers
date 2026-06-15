@@ -77,10 +77,13 @@
 \renewcommand{\headrule}{\color{teal3!40}\hrule width\headwidth height\headrulewidth}
 
 % ---- 水印（每页对角线「大队长出品」，仅正文页；封面与版权页跳过）----
+% 以页面中心为锤点旋转，避免超出页面边界
 \AddToShipoutPictureBG{%
   \ifnum\value{page}>2
-    \put(\LenToUnit{0.20\paperwidth},\LenToUnit{0.45\paperheight}){%
-      \rotatebox{45}{\color{gray!8}\fontsize{120}{120}\selectfont\bfseries 大队长出品}%
+    \AtPageCenter{%
+      \makebox(0,0){%
+        \rotatebox{45}{\color{gray!7}\fontsize{72}{72}\selectfont\bfseries 大队长出品}%
+      }%
     }%
   \fi
 }
