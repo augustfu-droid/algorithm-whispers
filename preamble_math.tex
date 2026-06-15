@@ -16,7 +16,14 @@
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage[open,openlevel=1]{bookmark}
 \usepackage{eso-pic}
+% 恢复 secnumdepth，让 hyperref 能给每个 section/subsection 独立 anchor（不显示编号）
+\AtBeginDocument{\setcounter{secnumdepth}{3}}
+% 但隐藏实际编号显示
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{}
+\renewcommand{\thesubsubsection}{}
 \usepackage{tikz}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
@@ -108,9 +115,9 @@
 \titlespacing*{\subsubsection}
   {0pt}{1.2em plus 0.3em minus 0.2em}{0.5em}
 
-% ---- 数学卷封面（紧凑版，单页容纳全部信息）----
+% ---- 数学卷封面（不用 titlepage，避免页码计数器重置导致书签偏移）----
 \newcommand{\makemathcoverpage}{%
-  \begin{titlepage}
+  \begingroup
     \thispagestyle{empty}
     \pagecolor{teal1}
     \begin{center}
@@ -149,5 +156,5 @@
     \end{center}
     \clearpage
     \nopagecolor
-  \end{titlepage}
+  \endgroup
 }
