@@ -1,0 +1,79 @@
+{
+  "exercise_counts": {
+    "8": 24,
+    "9": 12
+  },
+  "code_blocks": [
+    {
+      "chapter": 8,
+      "example": 1,
+      "output": "truth=0.640000, E[U]=0.640000, E[V]=0.592000"
+    },
+    {
+      "chapter": 8,
+      "example": 2,
+      "output": "true: [-0.444444, -0.111111, 0.555556]\nstandardized: [-0.222222, 0.0, 0.222222]"
+    },
+    {
+      "chapter": 9,
+      "example": 1,
+      "output": "0.58132008"
+    },
+    {
+      "chapter": 9,
+      "example": 2,
+      "output": "0.49994488717703744 5.5112822962555263e-05"
+    }
+  ],
+  "formula_counts": {
+    "8": 39,
+    "9": 20
+  },
+  "independent_numerical_checks": "passed",
+  "all_numbered_formulas": 490,
+  "equation_references": "all resolve to source labels",
+  "pdfs": [
+    {
+      "file": "C:\\Users\\付强\\Documents\\ChatGPT\\AI数学\\output\\pdf\\算法的低语_数学卷_v1.8.pdf",
+      "pages": 245,
+      "bookmarks": 77,
+      "margin_review_pages": [],
+      "missing_glyphs": 0,
+      "unresolved_references": 0,
+      "sha256": "25c4a5e759af53751178b7923a386f310fc499403a091ee923e0d988bccadfbe"
+    },
+    {
+      "file": "C:\\Users\\付强\\Documents\\ChatGPT\\AI数学\\output\\pdf\\算法的低语_数学卷习题伴读_v1.3_全册.pdf",
+      "pages": 387,
+      "bookmarks": 101,
+      "margin_review_pages": [],
+      "missing_glyphs": 0,
+      "unresolved_references": 0,
+      "sha256": "3b0c231b8312b8fa5eea61182af6d8c1dd2544c8ba8c076332bb5028f01d0161"
+    }
+  ],
+  "visual_review": {
+    "math_new_pages": [
+      227,
+      245
+    ],
+    "workbook_new_pages": [
+      369,
+      387
+    ],
+    "method": "contact sheets for all new pages; full-size cover and selected body pages; representative historical pages",
+    "result": "passed"
+  },
+  "compile_quality": {
+    "math": {
+      "overfull_boxes": 0,
+      "missing_glyphs": 0,
+      "unresolved_references": 0
+    },
+    "workbook": {
+      "overfull_boxes": 0,
+      "missing_glyphs": 0,
+      "unresolved_references": 0
+    }
+  }
+}
