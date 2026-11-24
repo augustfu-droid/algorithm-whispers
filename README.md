@@ -1,8 +1,15 @@
-[![YouTube English Channel](https://img.shields.io/badge/YouTube-InkStar%20Quant%20(EN)-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/@InkStarQuant)
-[![YouTube Chinese Channel](https://img.shields.io/badge/YouTube-%E5%A2%A8%E7%82%B9%E6%88%9F%20%7C%20%E5%A4%A7%E9%98%9F%E9%95%BF%20(CN)-C8483B?style=for-the-badge&logo=youtube)](https://www.youtube.com/@InkIntoStarsCN)
-[![Ink into Stars ML 108](https://img.shields.io/badge/Open%20Book-%E5%A2%A8%E7%82%B9%E6%88%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0108%E8%AE%B2-E3A857?style=for-the-badge&logo=github)](https://github.com/augustfu-droid/ink-into-stars-ml-108)
+[![YouTube 中文教学频道](https://img.shields.io/badge/YouTube-%E5%A2%A8%E7%82%B9%E6%88%90%E6%98%9F%C2%B7%E7%A7%91%E5%AD%A6%E4%B8%8EAI%20%28%40InkStarSciAICN%29-C8483B?style=for-the-badge&logo=youtube)](https://www.youtube.com/@InkStarSciAICN?sub_confirmation=1)
+[![YouTube English Science & AI](https://img.shields.io/badge/YouTube-InkStar%20Science%20%26%20AI%20%28%40InkStarSciAI%29-FF0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/@InkStarSciAI?sub_confirmation=1)
+[![ML 108 中文播放列表](https://img.shields.io/badge/Playlist-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%8E%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC%20108%20%E8%AE%B2-2B5B84?style=for-the-badge&logo=youtube)](https://www.youtube.com/playlist?list=PLB52YSkb7icg)
+[![ML 108 Open Book](https://img.shields.io/badge/Open%20Book-%E5%A2%A8%E7%82%B9%E6%88%90%E6%98%9F%EF%BC%9A%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%20108%20%E8%AE%B2-E3A857?style=for-the-badge&logo=github)](https://github.com/augustfu-droid/ml108)
 
-> 🎬 **作者官方视频频道（4K 手算推导与深度投研拆表）**：[YouTube 中文频道 (@InkIntoStarsCN)](https://www.youtube.com/@InkIntoStarsCN) ｜ [YouTube English (@InkStarQuant)](https://www.youtube.com/@InkStarQuant) ｜ 📖 [《墨点成星：机器学习108讲》全集开源书稿](https://github.com/augustfu-droid/ink-into-stars-ml-108)
+> [!TIP]
+> **🎬 配套 4K 数学推导与 AI 原理官方视频频道（Official Video Series）**
+>
+> - 🇨🇳 **中文科学/AI 教学专号**：[**墨点成星·科学与AI (`@InkStarSciAICN`)**](https://www.youtube.com/@InkStarSciAICN)（[一键订阅](https://www.youtube.com/@InkStarSciAICN?sub_confirmation=1)）— 大模型数学引擎、纸笔手算推导与前沿 AI 原理新课首发阵地
+> - 🌐 **English Science & AI Channel**：[**InkStar Science & AI (`@InkStarSciAI`)**](https://www.youtube.com/@InkStarSciAI)（[Subscribe](https://www.youtube.com/@InkStarSciAI?sub_confirmation=1)）— First-principles mathematics, Transformer mechanics & frontier AI derivations
+> - 📺 **已上线配套系列播放列表**：[**▶ 中文《机器学习与量化理工 108 讲》(`PLB52YSkb7icg`)**](https://www.youtube.com/playlist?list=PLB52YSkb7icg) ｜ [**▶ English *108 Lectures on Machine Learning* (`PLQ8UeKfoqQSw`)**](https://www.youtube.com/playlist?list=PLQ8UeKfoqQSw)
+> - 📖 **姊妹开源项目**：[《墨点成星：机器学习 108 讲》(`ml108`)](https://github.com/augustfu-droid/ml108) ｜ [《代码驱动的金融数学》(`finance-math-for-geeks`)](https://github.com/augustfu-droid/finance-math-for-geeks) ｜ [《2026 AI 周期研究》(`ai-bubble-cycle-research`)](https://github.com/augustfu-droid/ai-bubble-cycle-research)
 
 ---
 
@@ -87,9 +94,15 @@
 
 ## 作者
 
-大队长 · USTC alumnus  
-联系：<fqsx@mail.ustc.edu.cn>
+大队长（墨点成星 / InkStar Science & AI）  
+交流与勘误：欢迎通过本仓库 [GitHub Issues](https://github.com/augustfu-droid/algorithm-whispers/issues) 提交讨论与反馈。
 
 ## License
 
 文本与图表 © 大队长。引用请注明出处。
+
+---
+
+## 技术科普与合规免责声明
+
+> **【技术科普与免责声明】**：本仓库书稿、数学推导及配套视频资料系作者利用业余非工作时间整理的算法原理、应用数学与开源算力工程个人技术学习笔记。全部工程参数与学术资料均 100% 源自公网公开技术文献与开源行业报告，不涉及任何未公开信息或职务信息。本仓库旨在客观探讨人工智能与计算机科学底层数学机理，纯属个人业余理工科技术交流，与任何金融机构、企事业单位、雇主或组织无关，亦不代表任何机构立场；不涉及任何中国境内（A股）上市公司、港股标的或境内基金产品，在任何情况下均不构成任何投资、商业采购、工程施工或证券/基金交易决策建议。读者据此进行的任何判断或操作，风险完全自担。
